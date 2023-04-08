@@ -64,7 +64,7 @@ def dual_signal(df, window_size, quantile, rebalancing_period):
 
     return long_signal, long_short_signal
 
-def Efficiency_signal(df, window_size, rebalancing_period):
+def efficiency_signal(df, window_size, rebalancing_period):
     er = (df - df.shift(window_size)) / abs(df - df.shift()).rolling(window_size).sum()
 
     long_signal = pd.DataFrame(np.nan, index=df.index, columns=df.columns)
